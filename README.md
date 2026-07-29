@@ -138,9 +138,7 @@ sql-data-warehouse-project/
 
 ## 📜 License
 
-This project is licensed under the **MIT License**, allowing the code to be used, modified, and distributed under the terms of the license.
-
-For more information, see the **LICENSE** file included in this repository.
+ project is licensed under the **MIT License**, allowing the code to be used, modified, and distributed in accordance with the terms of the license. See the [LICENSE](LICENSE) file for more information.
 
 ---
 
