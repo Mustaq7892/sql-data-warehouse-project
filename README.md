@@ -1,155 +1,261 @@
 # 🏢 SQL Data Warehouse Project
 
-Welcome to the **SQL Data Warehouse Project** repository!
+Welcome to the **SQL Data Warehouse Project** repository! 🚀
 
-This project demonstrates the end-to-end design and implementation of a modern **Microsoft SQL Server Data Warehouse** using industry-standard data engineering practices. It covers the complete data warehousing lifecycle, including data ingestion, ETL development, data transformation, dimensional modeling, and analytical reporting.
+This project demonstrates the end-to-end design and implementation of a modern **Microsoft SQL Server Data Warehouse** using industry-standard data engineering practices. It covers the complete data warehousing lifecycle, including data ingestion, ETL development, data transformation, dimensional modeling, data quality validation, and analytical reporting.
 
 The primary objective of this project is to build a scalable and maintainable data warehouse that integrates data from multiple business systems into a centralized repository, enabling efficient reporting, analytics, and data-driven decision-making.
 
-Whether you're exploring data warehousing concepts, reviewing SQL Server implementations, or evaluating practical data engineering projects, this repository provides a structured example of building a modern data warehouse using industry-standard practices.
+Whether you're learning SQL Server, exploring data warehousing concepts, or reviewing practical data engineering implementations, this repository provides a structured, real-world example of building a modern data warehouse solution.
 
 ---
 
-## 🏗️ Data Architecture
+# 🏗️ Data Architecture
 
-This project follows the **Medallion Architecture** to organize data into multiple layers that improve data quality, maintainability, and analytical performance.
+This project follows the **Medallion Architecture**, organizing data into **Bronze**, **Silver**, and **Gold** layers.
 
-<p align="center">
-  <img src="docs/images/data_architecture.png" alt="Data Architecture" width="900">
-</p>
+![Project Architecture](docs/data_architecture.png)
 
 ### 🥉 Bronze Layer
-The Bronze layer serves as the landing zone for raw data collected from multiple source systems. Data is ingested into SQL Server with minimal transformation, preserving the original data for traceability and auditing.
+Stores raw data extracted from CRM and ERP source systems without modifications. This layer preserves the original data for traceability and auditing.
 
 ### 🥈 Silver Layer
-The Silver layer focuses on data cleansing, validation, standardization, and transformation. Business rules are applied to improve data quality and prepare datasets for analytical processing.
+Cleanses, validates, standardizes, and transforms raw data into high-quality datasets suitable for downstream processing.
 
 ### 🥇 Gold Layer
-The Gold layer contains business-ready data organized into fact and dimension tables using a star schema. This layer is optimized for reporting, dashboards, and business intelligence.
+Provides business-ready data modeled as a **Star Schema** consisting of dimension and fact views optimized for reporting, analytics, and business intelligence.
 
 ---
 
-## 📖 Project Overview
+# 📖 Project Overview
 
-Organizations generate data from multiple business systems, making it difficult to produce consistent reports and meaningful business insights. This project demonstrates the implementation of a centralized SQL Server Data Warehouse that consolidates data from various sources into a unified analytical repository.
+This project demonstrates the complete development of a modern SQL Server Data Warehouse, including:
 
-The solution applies modern data engineering principles including ETL development, data transformation, dimensional modeling, and analytical SQL to create a scalable and maintainable data platform for business intelligence.
+- Designing a Medallion Architecture (Bronze, Silver, Gold)
+- Building ETL pipelines using SQL Server Stored Procedures
+- Loading data from multiple source systems
+- Performing data cleansing and validation
+- Applying business transformation rules
+- Creating Star Schema dimensional models
+- Developing business-ready analytical views
+- Implementing data quality validation
+- Documenting architecture, naming conventions, and data models
 
----
-
-## 💡 Skills Demonstrated
-
-This project showcases practical experience in:
-
-- SQL Development
-- Data Warehousing
-- ETL Development
-- Data Modeling
-- Data Engineering
-- Database Design
-- Query Optimization
-- Business Intelligence
-- Data Analytics
+This repository showcases practical skills commonly used in Data Engineering and Business Intelligence projects.
 
 ---
 
-## 🛠️ Technologies Used
+# 🚀 Project Requirements
 
-| Technology | Purpose |
-|------------|---------|
-| Microsoft SQL Server | Database Engine |
-| SQL Server Management Studio (SSMS) | Database Development & Administration |
-| Draw.io | Architecture & Data Modeling Diagrams |
-| Git & GitHub | Version Control |
-| Markdown | Project Documentation |
+## 🏗️ Data Warehouse Development
 
----
+### Objective
 
-## 🚀 Project Objectives
+Design and implement a scalable SQL Server Data Warehouse that consolidates data from multiple business systems into a centralized analytical repository.
 
-### 🏗️ Data Warehouse Development
+### Specifications
 
-#### Goal
-
-Design and implement a scalable Microsoft SQL Server Data Warehouse that consolidates data from multiple business systems into a centralized analytical repository.
-
-#### Key Objectives
-
-- Extract data from CRM and ERP source systems.
-- Develop ETL pipelines for data ingestion and transformation.
-- Clean, validate, and standardize raw data.
-- Integrate multiple data sources into a unified warehouse.
-- Design dimensional models using fact and dimension tables.
-- Maintain high-quality project documentation.
+- Import CRM and ERP datasets.
+- Build ETL pipelines using Stored Procedures.
+- Clean and standardize source data.
+- Integrate multiple data sources.
+- Design a dimensional data model.
+- Maintain technical documentation.
+- Validate data quality throughout the pipeline.
 
 ---
 
-### 📊 Analytics & Business Intelligence
+## 📊 Analytics & Business Intelligence
 
-#### Goal
+### Objective
 
-Transform warehouse data into meaningful business information that supports reporting, trend analysis, and strategic decision-making.
+Transform curated warehouse data into meaningful business insights that support reporting and strategic decision-making.
 
-#### Key Objectives
+### Deliverables
 
-- Develop analytical SQL queries.
-- Analyze customer, product, and sales performance.
-- Generate business KPIs and performance metrics.
-- Prepare reporting-ready datasets.
-- Produce actionable business insights.
+- Customer Analysis
+- Product Performance
+- Sales Analysis
+- Business KPIs
+- Reporting-ready datasets
+- Analytical SQL queries
 
 ---
 
-## 📂 Repository Structure
+# ⚙️ Technology Stack
 
-```
+| Category | Technologies |
+|----------|--------------|
+| Database | Microsoft SQL Server |
+| Language | T-SQL |
+| Architecture | Medallion Architecture |
+| Data Modeling | Star Schema |
+| ETL | Stored Procedures, BULK INSERT |
+| Data Sources | CSV Files (CRM & ERP) |
+| Documentation | Markdown |
+| Diagramming | Draw.io |
+| Version Control | Git & GitHub |
+
+---
+
+# 📂 Repository Structure
+
+```text
 sql-data-warehouse-project/
 │
 ├── datasets/
-│   ├── source/
-│   └── processed/
+│   ├── source_crm/
+│   └── source_erp/
 │
 ├── docs/
-│   ├── architecture/
-│   ├── data-models/
-│   └── images/
+│   ├── etl.png
+│   ├── data_architecture.png
+│   ├── data_catalog.md
+│   ├── data_flow.png
+│   ├── data_model.png
+│   ├── naming_conventions.md
+│   └── Project_Notes_Pictures.pdf
 │
 ├── scripts/
 │   ├── bronze/
+│   │   ├── ddl_bronze.sql
+│   │   └── proc_load_bronze.sql
+│   │
 │   ├── silver/
-│   ├── gold/
-│   └── analytics/
+│   │   ├── ddl_silver.sql
+│   │   ├── init_database.sql
+│   │   └── proc_load_silver.sql
+│   │
+│   └── gold/
+│       └── ddl_gold.sql
 │
-├── README.md
-└── LICENSE
+├── tests/
+│   ├── quality_checks_silver.sql
+│   └── quality_checks_gold.sql
+│
+├── LICENSE
+└── README.md
 ```
 
-### Directory Overview
+---
 
-| Directory | Description |
-|-----------|-------------|
-| `datasets/` | Source and processed datasets used throughout the project. |
-| `docs/` | Project documentation, architecture diagrams, and data models. |
-| `scripts/` | SQL scripts for ETL pipelines, transformations, warehouse objects, and analytics. |
-| `README.md` | Project documentation and overview. |
-| `LICENSE` | MIT License for the project. |
+# 🚀 Getting Started
+
+Follow these steps to run the project.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/<your-github-username>/sql-data-warehouse-project.git
+```
+
+### 2. Create the Database
+
+Execute:
+
+```
+scripts/silver/init_database.sql
+```
+
+### 3. Create Bronze Tables
+
+Execute:
+
+```
+scripts/bronze/ddl_bronze.sql
+```
+
+### 4. Load Bronze Layer
+
+Execute:
+
+```
+scripts/bronze/proc_load_bronze.sql
+```
+
+### 5. Create Silver Tables
+
+Execute:
+
+```
+scripts/silver/ddl_silver.sql
+```
+
+### 6. Load Silver Layer
+
+Execute:
+
+```
+scripts/silver/proc_load_silver.sql
+```
+
+### 7. Create Gold Views
+
+Execute:
+
+```
+scripts/gold/ddl_gold.sql
+```
+
+### 8. Run Data Quality Checks
+
+Execute:
+
+```
+tests/quality_checks_silver.sql
+tests/quality_checks_gold.sql
+```
 
 ---
 
-## 📜 License
+# 📚 Project Documentation
 
- project is licensed under the **MIT License**, allowing the code to be used, modified, and distributed in accordance with the terms of the license. See the [LICENSE](LICENSE) file for more information.
+The project includes detailed documentation covering every stage of the data warehouse development lifecycle.
+
+| Document | Description |
+|----------|-------------|
+| Data Architecture | Overall Medallion Architecture |
+| ETL Diagram | ETL process and workflow |
+| Data Flow | End-to-end movement of data |
+| Data Model | Star Schema design |
+| Data Catalog | Business metadata for Gold layer |
+| Naming Conventions | Standards for database objects |
+| Quality Checks | Data validation scripts |
 
 ---
 
-## 👨‍💻 About Me
+# ✨ Features
 
-Hi! I'm **Shaik Mustaq**, a Software Developer with a passion for **Data Engineering**, **SQL**, and **Database Technologies**.
+- End-to-End SQL Server Data Warehouse
+- Medallion Architecture
+- Bronze, Silver, Gold Layers
+- ETL using Stored Procedures
+- Data Cleansing & Standardization
+- Data Quality Validation
+- Star Schema Modeling
+- Analytical SQL Views
+- Enterprise Documentation
+- Industry Best Practices
 
-I enjoy building scalable data solutions, designing modern data warehouses, and applying industry best practices to solve real-world business problems. This repository showcases my learning journey, hands-on projects, and practical implementations of modern data engineering concepts.
+---
 
-I'm committed to continuous learning and enjoy building projects that demonstrate real-world solutions and industry best practices.
+# 🛡️ License
 
-### 🌐 Let's Connect
+project is licensed under the **MIT License**, allowing the code to be used, modified, and distributed in accordance with the terms of the license. See the [LICENSE](LICENSE) file for more information.
+
+---
+
+# 👨‍💻 About Me
+
+Hi! I'm **Shaik Mustaq**, a **Software Developer** with over **2 years of professional experience** and a strong passion for **Data Engineering**, **SQL**, and **Database Technologies**.
+
+I enjoy designing scalable data solutions, building modern data warehouses, and applying industry best practices to solve real-world business problems. This repository showcases my continuous learning journey and hands-on experience in SQL Server, ETL development, dimensional modeling, and data engineering.
+
+I'm committed to continuously improving my technical expertise by building practical projects that demonstrate real-world implementations and industry-standard development practices.
+
+## 🌐 Connect With Me
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaik-mustaq-915741254/)
+
+---
+⭐ If you found this project helpful, consider giving it a **Star**. It helps others discover the project and supports my learning journey.
