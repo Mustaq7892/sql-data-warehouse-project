@@ -148,7 +148,7 @@ Follow these steps to run the project.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-github-username>/sql-data-warehouse-project.git
+https://github.com/Mustaq7892/sql-data-warehouse-project
 ```
 
 ### 2. Create the Database
