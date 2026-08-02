@@ -108,13 +108,15 @@ sql-data-warehouse-project/
 │   └── source_erp/
 │
 ├── docs/
-│   ├── etl.png
+│   ├── ETL.png
+│   ├── Project_Notes_Pictures.pdf
 │   ├── data_architecture.png
 │   ├── data_catalog.md
 │   ├── data_flow.png
+│   ├── data_integration.png
+│   ├── data_layers.pdf
 │   ├── data_model.png
-│   ├── naming_conventions.md
-│   └── Project_Notes_Pictures.pdf
+│   └── naming_conventions.md
 │
 ├── scripts/
 │   ├── bronze/
@@ -123,15 +125,15 @@ sql-data-warehouse-project/
 │   │
 │   ├── silver/
 │   │   ├── ddl_silver.sql
-│   │   ├── init_database.sql
-│   │   └── proc_load_silver.sql
+│   │   ├── proc_load_silver.sql 
+│   │   └── init_database.sql
 │   │
 │   └── gold/
 │       └── ddl_gold.sql
 │
 ├── tests/
-│   ├── quality_checks_silver.sql
-│   └── quality_checks_gold.sql
+│   ├── quality_checks_gold.sql
+│   └── quality_checks_silver.sql
 │
 ├── LICENSE
 └── README.md
