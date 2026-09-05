@@ -257,7 +257,7 @@ I'm committed to continuously improving my technical expertise by building pract
 
 ## 🌐 Connect With Me
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaik-mustaq-915741254/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/skmustaq/)
 
 ---
 ⭐ If you found this project helpful, consider giving it a **Star**. It helps others discover the project and supports my learning journey.
